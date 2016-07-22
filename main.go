@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	goDefer()
-	goPanic()
+	//goDefer()
+	//goPanic()
 	f()
 }
 func goDefer() {
