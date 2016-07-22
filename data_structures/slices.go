@@ -1,10 +1,19 @@
 package data_structures
 
+import "fmt"
+
 type mapOperation func(int32) int32
 type filterOperation func(int32) bool
 
 func mapInts(op mapOperation, vals []int32) []int32 {
-	return []int32{}
+
+	result := []int32{}
+	for _,i := range vals{
+		 j:= i * i
+		fmt.Println(j);
+		result = append(result, j);
+	}
+	return result
 
 }
 
