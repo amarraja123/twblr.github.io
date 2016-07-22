@@ -8,6 +8,7 @@ var fizzBuzzTests = []struct {
 }{
 	{2, "2"},
 	{4, "4"},
+	{100, "100"},
 	{3, "Fizz"},
 	{5, "Buzz"},
 	{15, "FizzBuzz"},
