@@ -8,4 +8,10 @@ func TestCollatzChainLength(t *testing.T) {
 	if n != 111 {
 		t.Errorf("Expected %d, got %d", 111, n)
 	}
+
+	n = collatzChainLength(1)
+
+	if n != 0 {
+		t.Errorf("Expected %d, got %d", 0, n)
+	}
 }
