@@ -21,6 +21,9 @@ func filterInts(op filterOperation, vals []int32) []int32 {
 func concatenate(dest []string, newValues ...string) []string {
 
 	result := []string{}
+	for _, eachVal := range dest{
+		result = append(result, eachVal);
+	}
 	for _, eachVal := range newValues{
 		result = append(result, eachVal);
 	}
@@ -28,7 +31,26 @@ func concatenate(dest []string, newValues ...string) []string {
 }
 
 func equals(list1 []string, list2 []string) bool {
-	return false
+
+	if list1 == nil && list2 == nil {
+		return true;
+	}
+
+	if list1 == nil || list2 == nil {
+		return false;
+	}
+
+	if len(list1) != len(list2) {
+		return false
+	}
+
+	for i := range list1 {
+		if list1[i] != list2[i] {
+			return false
+		}
+	}
+
+	return true
 }
 
 func partialReverse(src []int, from, to int) []int {

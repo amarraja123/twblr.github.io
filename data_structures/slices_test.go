@@ -1,6 +1,9 @@
 package data_structures
 
-import "testing"
+import (
+	"testing"
+	"fmt"
+)
 
 func TestMapInts(t *testing.T) {
 	square := func(arg1 int32) int32 {
@@ -49,6 +52,9 @@ func TestConcatenation(t *testing.T) {
 	newList := concatenate(superHeros, "Spiderman", "IronMan")
 
 	if !equals(newList, []string{"Batman", "Superman", "Flash", "Spiderman", "IronMan"}) {
+		for _, eachVal := range newList{
+			fmt.Println(eachVal)
+		}
 		t.Errorf("Concatenated list should have been equal")
 	}
 }
