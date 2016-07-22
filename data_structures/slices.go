@@ -15,7 +15,13 @@ func mapInts(op mapOperation, vals []int32) []int32 {
 }
 
 func filterInts(op filterOperation, vals []int32) []int32 {
-	return []int32{3}
+	result := []int32{}
+	for _, eachVal := range vals{
+		if(eachVal > 2){
+			result = append(result, eachVal);
+		}
+	}
+	return result
 }
 
 func concatenate(dest []string, newValues ...string) []string {
