@@ -5,6 +5,7 @@ import (
 	"fmt"
 )
 
+// Can do without library.
 func fizzBuzz(i int32) string {
 
 	if((math.Mod(float64(i), float64(5)) == float64(0)) && (math.Mod(float64(i), float64(3)) == float64(0))){
