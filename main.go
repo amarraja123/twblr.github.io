@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	//goDefer()
 	//goPanic()
-	fm()
+	f()
 }
 func goDefer() {
 	fmt.Println("Start Function")
