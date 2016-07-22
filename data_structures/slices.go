@@ -19,7 +19,12 @@ func filterInts(op filterOperation, vals []int32) []int32 {
 }
 
 func concatenate(dest []string, newValues ...string) []string {
-	return nil
+
+	result := []string{}
+	for _, eachVal := range newValues{
+		result = append(result, eachVal);
+	}
+	return result
 }
 
 func equals(list1 []string, list2 []string) bool {
