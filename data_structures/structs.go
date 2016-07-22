@@ -13,6 +13,11 @@ type List struct {
 	size int
 }
 
+/**
+Implementation:
+For Example: objectOfList.Add(5)
+Returns: List after adding the int.
+ */
 func (l *List) Add(elem int) *List {
 	n := &Node{data: elem}
 	if l.head == nil {
@@ -30,6 +35,7 @@ func (l *List) Add(elem int) *List {
 /**
 Implementation:
 For Example: objectOfList.Search(5)
+Returns: List if found or Nil
  */
 func (l *List) Search(elem int) *Node {
 
