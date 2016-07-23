@@ -2,6 +2,7 @@ package interfaces
 
 import "testing"
 
+
 func TestAreaofSquare(t *testing.T) {
 	s := Square{side: 2}
 	result := s.Area()
@@ -19,6 +20,8 @@ func TestAreaofRectangle(t *testing.T) {
 		t.Errorf("Expected area of rectangle to be 20, got %d", result)
 	}
 }
+
+
 
 func TestAreaofComplexShape(t *testing.T) {
 	s := Square{side: 10}
