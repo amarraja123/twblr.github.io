@@ -1,5 +1,7 @@
 package interfaces
 
+import "fmt"
+
 type Shape interface {
 	Area() int
 }
@@ -18,13 +20,33 @@ type Hybrid struct {
 }
 
 func (s Square) Area() int {
-	return s.side * s.side
+	return findType(s)
 }
 
 func (r Rectangle) Area() int {
-	return r.length * r.breadth
+	return findType(r)
 }
 
 func (h Hybrid) Area() int {
-	return (h.s.side * h.s.side) + (h.r.breadth * h.r.length)
+	return findType(h)
 }
+
+func findType(h Shape) int {
+
+	switch t := h.(type) {
+	default:
+		fmt.Printf("unexpected type %T\n", t)
+		return 0
+	case Square:
+		square := Square(t)
+		return square.side*square.side
+	case Rectangle:
+		rectangle := Rectangle(t)
+		return rectangle.length*rectangle.breadth
+	case Hybrid:
+		h := Hybrid(t)
+		return (h.s.side * h.s.side) + (h.r.breadth * h.r.length)
+
+	}
+}
+
