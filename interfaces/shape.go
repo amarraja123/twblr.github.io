@@ -2,6 +2,8 @@ package interfaces
 
 import "fmt"
 
+type Hybrid []Shape
+
 type Shape interface {
 	Area() int
 }
@@ -12,11 +14,6 @@ type Square struct {
 
 type Rectangle struct {
 	length, breadth int
-}
-
-type Hybrid struct {
-	s Shape
-	r Shape
 }
 
 func (s Square) Area() int {
@@ -42,7 +39,12 @@ func findType(h Shape) int {
 	case Rectangle:
 		return t.length*t.breadth
 	case Hybrid:
-		return t.s.Area() + t.r.Area()
+		fmt.Println("%+v",t)
+		area := 0;
+		for shape := range t{
+			area = area + (*shape).Area()
+		}
+		return area
 
 	}
 }
