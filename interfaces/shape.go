@@ -15,8 +15,8 @@ type Rectangle struct {
 }
 
 type Hybrid struct {
-	s Square
-	r Rectangle
+	s Shape
+	r Shape
 }
 
 func (s Square) Area() int {
@@ -38,14 +38,11 @@ func findType(h Shape) int {
 		fmt.Printf("unexpected type %T\n", t)
 		return 0
 	case Square:
-		square := Square(t)
-		return square.side*square.side
+		return t.side*t.side
 	case Rectangle:
-		rectangle := Rectangle(t)
-		return rectangle.length*rectangle.breadth
+		return t.length*t.breadth
 	case Hybrid:
-		h := Hybrid(t)
-		return (h.s.side * h.s.side) + (h.r.breadth * h.r.length)
+		return t.s.Area() + t.r.Area()
 
 	}
 }
