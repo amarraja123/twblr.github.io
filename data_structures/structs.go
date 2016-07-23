@@ -50,6 +50,7 @@ func (l *List) Search(elem int) *Node {
 	return ret
 }
 
+// Normal linked list methods for future use.
 func (l *List) First() *Node {
 	return l.head
 }
